@@ -1,24 +1,45 @@
-# README
+# アプリケーション名
+ROADMAP
 
-This README would normally document whatever steps are necessary to get the
-application up and running.
+# アプリケーション概要
+タスクを可視化することによって、自分はもちろんチームで働いている場合は円滑にメンバーのタスクや業務を確認することができるようなる。
 
-Things you may want to cover:
+# URL
+hogehoge
 
-* Ruby version
+# テスト用アカウント
+hogehoge
 
-* System dependencies
 
-* Configuration
+# 利用方法
+## タスク登録
 
-* Database creation
+## タスクの編集
 
-* Database initialization
+## メンバーのスケジュールチェック
 
-* How to run the test suite
+## タスクにコメント
 
-* Services (job queues, cache servers, search engines, etc.)
+# アプリケーションを作成した背景
+自分自身やる気の波があり、仕事の進みが良い時と悪い時に差がありました。よくよく振り返ってみるとモチベーションが低い時でも仕事が進んでいる時があり、その時は自分がやらないといけないことをメモに可視化して、終わったタスクにはチェックを入れたりし、やらないといけないことの可視化をしていたことに気がついた。
+また、チームで働いていた際に他のメンバーがどれだけのタスクを持っているのかが見えないことがあり、フォローしたくてもできていないことがあった。
+そこでチームメンバー全員のスケジュール、タスク一覧を可視化できるアプリケーションを作成すれば解決できると考え、作成に至った。
 
-* Deployment instructions
+# 洗い出した要件
+[要件を定義したシート](https://docs.google.com/spreadsheets/d/1KbfTW-hG_TRwnjFbz-lb6DYeyFyu02HLK66OHNT9_ak/edit#gid=1114345185)
 
-* ...
+# 実装した機能についての画像やGIFおよびその説明
+
+# 実装予定の機能
+
+# データーベース設計
+[![Image from Gyazo](https://i.gyazo.com/47edf888de1476bd8a95a55b94c81b1e.png)](https://gyazo.com/47edf888de1476bd8a95a55b94c81b1e)
+
+# 画面遷移図
+[![Image from Gyazo](https://i.gyazo.com/5ddb4d1d499f24700e37211ccb744d58.png)](https://gyazo.com/5ddb4d1d499f24700e37211ccb744d58)
+
+# 開発環境
+
+# ローカルでの動作確認
+
+# 工夫したポイント
