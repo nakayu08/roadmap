@@ -3,16 +3,18 @@
   オンラインRoadmap
   </div>
   <div class="header_link">
-    <% if user_signed_in? %>
-      <div class="user_nav grid-6">
-        <%= current_user.nickname %>さん
-        <%= link_to "ログアウト", destroy_user_session_path, method: :delete ,class: "link"%>
-      </div>
-    <% else %>
-      <div class="grid-6">
-        <%= link_to "ログイン", new_user_session_path, class: "link" %>
-        <%= link_to "新規登録", new_user_registration_path, class: "link" %>
-      </div>
-    <% end %>
+    <%if !(current_page?(root_path)) %>
+      <% if user_signed_in? %>
+        <div class="user_nav grid-6">
+          <%= current_user.nickname %>さん
+          <%= link_to "ログアウト", destroy_user_session_path, method: :delete ,class: "link"%>
+        </div>
+      <% else %>
+        <div class="grid-6">
+          <%= link_to "ログイン", new_user_session_path, class: "link" %>
+          <%= link_to "新規登録", new_user_registration_path, class: "link" %>
+        </div>
+      <% end %>
+    <%end%>
   </div>
 </div>
