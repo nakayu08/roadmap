@@ -24,8 +24,8 @@ ActiveRecord::Schema.define(version: 2023_08_07_044629) do
   create_table "tasks", options: "ENGINE=InnoDB DEFAULT CHARSET=utf8", force: :cascade do |t|
     t.string "title", null: false
     t.text "explanation", null: false
-    t.datetime "start_time", null: false
-    t.datetime "end_time", null: false
+    t.time "start_time", null: false
+    t.time "end_time", null: false
     t.integer "category_id", null: false
     t.integer "condition_id", null: false
     t.datetime "created_at", precision: 6, null: false
