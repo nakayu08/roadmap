@@ -3,6 +3,7 @@
   <div class='task-from'>
     <h1>タスク登録画面です！</h1>
     <%=form_with model: @task, local: true do |f|%>
+    <%= render 'layouts/error_messages', model: f.object %>
       
       <%= f.label :title, :タスク名, class: 'task-form_label'%>
       <%= f.text_field :title, class: 'task_title_input', placeholder: 'タスク名を入力してください'%><br>
