@@ -6,6 +6,7 @@ class Task < ApplicationRecord
   validates :explanation, presence: true
   validates :start_time, presence: true
   validates :end_time, presence: true
+  validates :user_ids, presence: true
 
   validate :start_end_check
   validate :start_check
