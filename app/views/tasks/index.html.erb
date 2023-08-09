@@ -1,13 +1,17 @@
-<div class="user_index">
-  <div class="users">
-    <% @users.each do |user| %>
-      <div class="user">
-        <div class="user-name">
-          <a href="#"><%= user.first_name %></a>
+<div class="task_main">
+  <div class="user_index">
+    <div class="users">
+      <% @users.each do |user| %>
+        <div class="user">
+          <div class="user-name">
+            <a href="#"><%= user.first_name %><%= user.last_name%>さん</a>
+          </div>
         </div>
-      </div>
-    <% end %>
+      <% end %>
+    </div>
+  </div>
+
+  <div class="user_calendar">
+  1ヶ月のスケジュールです！
   </div>
 </div>
-
-
