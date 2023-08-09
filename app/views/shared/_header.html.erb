@@ -1,6 +1,11 @@
 <div class="header">
   <div class="main_title">
-  オンラインRoadmap
+    <%if !(current_page?(root_path)) %>
+      <%= link_to "オンラインRoadmap", tasks_path, class: "link" %>
+    <% else %>
+      オンラインRoadmap
+    <%end%>
+
   </div>
   <div class="header_link">
     <%if !(current_page?(root_path)) %>
