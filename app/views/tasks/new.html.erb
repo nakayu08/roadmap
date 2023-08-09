@@ -7,6 +7,14 @@
       <%= f.label :title, :タスク名, class: 'task-form_label'%>
       <%= f.text_field :title, class: 'task_title_input', placeholder: 'タスク名を入力してください'%><br>
 
+      <div class="items-explain">
+        <div class="weight-bold-text">
+          商品の説明
+          <span class="indispensable">必須</span>
+        </div>
+        <%= f.text_area :explanation, class:"tasks-text", id:"tasks-info", placeholder:"タスクの詳細"%>
+      </div>
+
       <%= f.label :category_id, :タスクの種類, class: 'task-form_label'%>
       <%= f.collection_select(:category_id, Category.all, :id, :name, {}, {class:"genre-select"}) %><br>
       
@@ -14,22 +22,14 @@
       <%= f.collection_select(:condition_id, Condition.all, :id, :name, {}, {class:"genre-select"}) %><br>
 
       <%= f.label :start_time, :タスクの開始時間, class: 'task-form_label'%>
-      <%= f.time_select :start_time, {include_blank: true, minute_step: 15}, {class: 'time-box'}%><br>
+      <%= f.datetime_select :start_time, {use_month_numbers: true,minute_step: 15}, {class: 'time-box'}%><br>
 
       <%= f.label :end_time, :タスクの終了時間, class: 'task-form_label'%>
-      <%= f.time_select :end_time, {include_blank: true, minute_step: 15}, {class: 'time-box'}%><br>
+      <%= f.datetime_select :end_time, {use_month_numbers: true,minute_step: 15}, {class: 'time-box'}%><br>
 
-      
-      <label class='task-form_label' for='task_タスクメンバー'>タスクメンバー</label>
-      <select name="room[user_ids][]">
-        <option>自分以外でタスクに参加するユーザーを選択してください</option>
-        <% User.where.not(id: current_user.id).each do |user| %>
-          <option value=<%= user.id %>><%= user.nickname %></option>
-        <% end %>
-
-      </select><br>
-      <input name="room[user_ids][]" type="hidden" value=<%= current_user.id %>>
-      <%= f.submit class: 'tasku-from_action'%>
+     <label>タスクの参加者</label>
+      <%= f.collection_check_boxes :user_ids, User.all, :id, :nickname %>
+      <%= f.submit class: 'task-from_action'%>
     <% end %>
   </div>
 </div>

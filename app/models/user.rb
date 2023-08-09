@@ -5,7 +5,7 @@ class User < ApplicationRecord
          :recoverable, :rememberable, :validatable
   
   has_many :task_users
-  has_many :tasks, through: :task_users       
+  has_many :tasks, through: :task_users
   
   validates :nickname, presence: true
   validates :first_name, presence: true,format: { with: /\A[ぁ-んァ-ヶ一-龥々ー]+\z/ }
