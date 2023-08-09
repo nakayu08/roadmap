@@ -15,7 +15,7 @@ class TasksController < ApplicationController
     if @task.save
       redirect_to tasks_path
     else
-      binding.pry
+      #binding.pry
       render :new
     end
   end
