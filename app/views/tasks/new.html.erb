@@ -30,6 +30,7 @@
 
      <label>タスクの参加者</label>
       <%= f.collection_check_boxes :user_ids, User.all, :id, :nickname %>
+
       <%= f.submit class: 'task-from_action'%>
     <% end %>
   </div>
