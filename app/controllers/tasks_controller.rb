@@ -1,4 +1,11 @@
 class TasksController < ApplicationController
+  def index
+    @users = User.all
+    @user = User.find(current_user.id)
+    #binding.pry
+    @tasks  = @user.tasks
+  end
+
   def new
     @task = Task.new
   end
@@ -10,7 +17,7 @@ class TasksController < ApplicationController
     if @task.save
       redirect_to tasks_path
     else
-      binding.pry
+      #binding.pry
       render :new
     end
   end

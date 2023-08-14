@@ -1,5 +1,18 @@
-<div class="contents row">
-ログイン後の画面です！
-<%= link_to "ログアウト", destroy_user_session_path, method: :delete %>
-<%= link_to "タスク登録", new_task_path %>
+<div class="task_main">
+  <div class="user_index">
+    <div class="users">
+      <% @users.each do |user| %>
+        <div class="user">
+          <div class="user-name">
+            <a href="#"><%= user.first_name %><%= user.last_name%>さん</a>
+          </div>
+        </div>
+      <% end %>
+    </div>
+  </div>
+
+  <div class="user_calendar">
+  <h1>1ヶ月のスケジュールです！</h1>
+    <div id='calendar'></div>
+  </div>
 </div>
