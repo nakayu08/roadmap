@@ -73,3 +73,8 @@
 .user-name a{
   text-decoration: none;
 }
+
+.user_calendar{
+  width: calc(100vw - 120px);
+  height: 100%;
+}

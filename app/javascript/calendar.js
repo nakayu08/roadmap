@@ -43,7 +43,6 @@ document.addEventListener('DOMContentLoaded', function() {
       events: '/tasks.json', 
   });
 
-
   calendar.render();
 
 

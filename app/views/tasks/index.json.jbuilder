@@ -3,5 +3,5 @@ json.array!(@tasks) do |task|
   json.title task.title
   json.start task.start_time  
   json.end task.end_time 
-  json.explanation task.explanation
+  json.description task.explanation
  end
