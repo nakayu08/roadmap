@@ -78,3 +78,7 @@
   width: calc(100vw - 120px);
   height: 100%;
 }
+
+div.fc-event-title {
+	white-space: normal;
+}
