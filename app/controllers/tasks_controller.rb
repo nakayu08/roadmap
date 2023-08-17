@@ -6,6 +6,11 @@ class TasksController < ApplicationController
     @tasks  = @user.tasks
   end
 
+  def show
+    @user =User.find(params[id])
+    tasks= @user.tasks
+  end
+
   def new
     @task = Task.new
   end
