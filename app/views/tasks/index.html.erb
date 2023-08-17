@@ -4,7 +4,7 @@
       <% @users.each do |user| %>
         <div class="user">
           <div class="user-name">
-            <a href="#"><%= user.first_name %><%= user.last_name%>さん</a>
+            <%= link_to user.first_name + user.last_name , task_path(user.id), method: :get %>
           </div>
         </div>
       <% end %>
