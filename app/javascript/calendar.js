@@ -38,8 +38,6 @@ document.addEventListener('DOMContentLoaded', function() {
       windowResize: function () { // ②
         $('#calendar').fullCalendar('option', 'height', window.innerHeight - 100);
       },
-      
-
       events: '/tasks.json', 
   });
 
