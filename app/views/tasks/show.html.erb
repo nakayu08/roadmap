@@ -1,1 +1,19 @@
-個人のページです！
+<div class="task_main">
+  <div class="user_index">
+    <div class="users">
+      <% @users.each do |user| %>
+        <div class="user">
+          <div class="user-name">
+            <%= link_to user.first_name + user.last_name , task_path(user.id), method: :get %>
+          </div>
+        </div>
+      <% end %>
+    </div>
+  </div>
+
+  <div class="user_calendar">
+  <%= @user.nickname%>
+  <h1>個人の1ヶ月のスケジュールです！</h1>
+    <div id='calendar'></div>
+  </div>
+</div>
