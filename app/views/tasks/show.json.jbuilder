@@ -4,7 +4,7 @@ json.array!(@tasks) do |task|
   json.end task.end_time 
   json.description task.explanation
   json.condition task.condition_id
-
+  
   if task.condition_id == 2
     json.color "#ff0000"  ##対応前はred
   elsif task.condition_id == 3

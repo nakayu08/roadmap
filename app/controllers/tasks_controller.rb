@@ -2,14 +2,13 @@ class TasksController < ApplicationController
   def index
     @users = User.all
     @user = User.find(current_user.id)
-    #binding.pry
     @tasks  = @user.tasks
   end
 
   def show
     @users = User.all
-    @user =User.find(params[:id])
-    @tasks= @user.tasks
+    @user = User.find(params[:id])
+    @tasks = @user.tasks
   end
 
   def new
