@@ -4,7 +4,9 @@ import interactionPlugin from '@fullcalendar/interaction';
 import timeGridPlugin from '@fullcalendar/timegrid';
 
 document.addEventListener('DOMContentLoaded', function() {
-  var calendarEl = document.getElementById('calendar2');
+  var param =location.pathname
+
+  var calendarEl = document.getElementById('onlyCalendar');
 
   var calendar = new Calendar(calendarEl, {
     plugins: [ dayGridPlugin, interactionPlugin ,timeGridPlugin],
@@ -38,7 +40,7 @@ document.addEventListener('DOMContentLoaded', function() {
       windowResize: function () { // ②
         $('#calendar').fullCalendar('option', 'height', window.innerHeight - 100);
       },
-      events: '/tasks.json', 
+      events: param+'.json', 
   });
 
   calendar.render();
