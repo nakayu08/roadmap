@@ -9,7 +9,7 @@ class Task < ApplicationRecord
   validates :user_ids, presence: true
 
   validate :start_end_check
-  validate :start_check
+  #validate :start_check
   
   validates :category_id, numericality: { other_than: 1, message: "can't be blank" } 
   validates :condition_id, numericality: { other_than: 1, message: "can't be blank" } 
@@ -23,8 +23,8 @@ class Task < ApplicationRecord
     errors.add(:end_time, "は開始時刻より遅い時間を選択してください") if self.start_time > self.end_time
   end
 
-  def start_check
-    errors.add(:start_time, "は現在の日時より遅い時間を選択してください") if self.start_time < Time.now
-  end
+  #def start_check
+   # errors.add(:start_time, "は現在の日時より遅い時間を選択してください") if self.start_time < Time.now
+  #end
 
 end
