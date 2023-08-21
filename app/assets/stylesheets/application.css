@@ -82,3 +82,7 @@
 div.fc-event-title {
 	white-space: normal;
 }
+
+.fc-event.end-tasks{
+  text-decoration: line-through;
+}
