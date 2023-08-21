@@ -28,4 +28,6 @@ json.array!(@tasks) do |task|
   else
     json.title "タスクの種類が登録されていません。"
   end
+
+  json.url edit_task_path(task.id)
  end
