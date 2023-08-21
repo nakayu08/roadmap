@@ -3,7 +3,12 @@ json.array!(@tasks) do |task|
   json.start task.start_time  
   json.end task.end_time 
   json.description task.explanation
+
+  if task.condition_id == 4
+    json.classNames 'end-tasks'
+  end
   json.condition task.condition_id
+
 
   if task.condition_id == 2
     json.color "#ff0000"  ##対応前はred
@@ -28,4 +33,6 @@ json.array!(@tasks) do |task|
   else
     json.title "タスクの種類が登録されていません。"
   end
+
+  json.url edit_task_path(task.id)
  end

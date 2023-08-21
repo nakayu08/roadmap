@@ -39,6 +39,9 @@ document.addEventListener('DOMContentLoaded', function() {
         $('#calendar').fullCalendar('option', 'height', window.innerHeight - 100);
       },
       events: '/tasks.json', 
+
+      
+     
   });
 
   calendar.render();

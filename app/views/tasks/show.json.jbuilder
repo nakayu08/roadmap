@@ -5,6 +5,10 @@ json.array!(@tasks) do |task|
   json.description task.explanation
   json.condition task.condition_id
 
+  if task.condition_id == 4
+    json.classNames 'end-tasks'
+  end
+
   if task.condition_id == 2
     json.color "#ff0000"  ##対応前はred
   elsif task.condition_id == 3
