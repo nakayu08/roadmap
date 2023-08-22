@@ -41,3 +41,7 @@
       <%= f.submit class: 'task-from_action'%>
     <% end %>
   </div>
+
+<br>
+  タスクの削除<br>
+  <%= link_to '削除', task_path(@task.id), method: :delete %>
