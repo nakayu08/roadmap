@@ -1,13 +1,16 @@
-<h1>タスクの詳細です！</h1>
-タスク名： <%=@task.title%><br>
-タスクの説明：<%=@task.explanation%><br>
-タスクの状態：<%=@task.condition.name%><br>
-タスクの種類：<%=@task.category.name%><br>
-タスクの開始時間：<%=@task.start_time%><br>
-タスクの終了時間：<%=@task.end_time%><br>
+<div class='tassk-edit'>
+  <div class ='task-detail'>
+    <h1>タスクの詳細です！</h1>
+    タスク名： <%=@task.title%><br>
+    タスクの説明：<%=@task.explanation%><br>
+    タスクの状態：<%=@task.condition.name%><br>
+    タスクの種類：<%=@task.category.name%><br>
+    タスクの開始時間：<%=@task.start_time%><br>
+    タスクの終了時間：<%=@task.end_time%><br>
+  </div>
 
 
- <div class='task-from'>
+  <div class='task-from'>
     <h1>タスク編集画面です！</h1>
     <%=form_with model: @task, local: true do |f|%>
     <%= render 'layouts/error_messages', model: f.object %>
@@ -35,12 +38,13 @@
       <%= f.label :end_time, :タスクの終了時間, class: 'task-form_label'%>
       <%= f.datetime_select :end_time, {use_month_numbers: true,minute_step: 15}, {class: 'time-box'}%><br>
 
-     <label>タスクの参加者</label>
+      <label>タスクの参加者</label>
       <%= f.collection_check_boxes :user_ids, User.all, :id, :nickname %>
 
       <%= f.submit class: 'task-from_action'%>
     <% end %>
   </div>
+</div>
 
 <br>
   <h1>タスクの削除リンクです！</h1>
