@@ -92,7 +92,8 @@ div.fc-event-title {
 タスク詳細画面のCSS
 */
 
-.tassk-edit{
+.task-edit-main{
   display: flex;
   justify-content: space-around;
 }
+ 

@@ -1,51 +1,55 @@
-<div class='tassk-edit'>
-  <div class ='task-detail'>
-    <h1>タスクの詳細です！</h1>
-    タスク名： <%=@task.title%><br>
-    タスクの説明：<%=@task.explanation%><br>
-    タスクの状態：<%=@task.condition.name%><br>
-    タスクの種類：<%=@task.category.name%><br>
-    タスクの開始時間：<%=@task.start_time%><br>
-    タスクの終了時間：<%=@task.end_time%><br>
+<div class='task-edit-main'>
+  <div class='task-edit-up'>
+    <div class ='task-detail'>
+      <h1>タスクの詳細です！</h1>
+      タスク名： <%=@task.title%><br>
+      タスクの説明：<%=@task.explanation%><br>
+      タスクの状態：<%=@task.condition.name%><br>
+      タスクの種類：<%=@task.category.name%><br>
+      タスクの開始時間：<%=@task.start_time%><br>
+      タスクの終了時間：<%=@task.end_time%><br>
+    </div>
   </div>
 
 
-  <div class='task-from'>
-    <h1>タスク編集画面です！</h1>
-    <%=form_with model: @task, local: true do |f|%>
-    <%= render 'layouts/error_messages', model: f.object %>
-      
-      <%= f.label :title, :タスク名, class: 'task-form_label'%>
-      <%= f.text_field :title, class: 'task_title_input', placeholder: 'タスク名を入力してください'%><br>
+  <div class='task-edit-down'>
+    <div class='task-from'>
+      <h1>タスク編集画面です！</h1>
+      <%=form_with model: @task, local: true do |f|%>
+      <%= render 'layouts/error_messages', model: f.object %>
+        
+        <%= f.label :title, :タスク名, class: 'task-form_label'%>
+        <%= f.text_field :title, class: 'task_title_input', placeholder: 'タスク名を入力してください'%><br>
 
-      <div class="items-explain">
-        <div class="weight-bold-text">
-          タスクの説明
-          <span class="indispensable">必須</span>
+        <div class="items-explain">
+          <div class="weight-bold-text">
+            タスクの説明
+            <span class="indispensable">必須</span>
+          </div>
+          <%= f.text_area :explanation, class:"tasks-text", id:"tasks-info", placeholder:"タスクの詳細"%>
         </div>
-        <%= f.text_area :explanation, class:"tasks-text", id:"tasks-info", placeholder:"タスクの詳細"%>
-      </div>
 
-      <%= f.label :category_id, :タスクの種類, class: 'task-form_label'%>
-      <%= f.collection_select(:category_id, Category.all, :id, :name, {}, {class:"genre-select"}) %><br>
-      
-      <%= f.label :condition_id, :タスクの状態, class: 'task-form_label'%>
-      <%= f.collection_select(:condition_id, Condition.all, :id, :name, {}, {class:"genre-select"}) %><br>
+        <%= f.label :category_id, :タスクの種類, class: 'task-form_label'%>
+        <%= f.collection_select(:category_id, Category.all, :id, :name, {}, {class:"genre-select"}) %><br>
+        
+        <%= f.label :condition_id, :タスクの状態, class: 'task-form_label'%>
+        <%= f.collection_select(:condition_id, Condition.all, :id, :name, {}, {class:"genre-select"}) %><br>
 
-      <%= f.label :start_time, :タスクの開始時間, class: 'task-form_label'%>
-      <%= f.datetime_select :start_time, {use_month_numbers: true,minute_step: 15}, {class: 'time-box'}%><br>
+        <%= f.label :start_time, :タスクの開始時間, class: 'task-form_label'%>
+        <%= f.datetime_select :start_time, {use_month_numbers: true,minute_step: 15}, {class: 'time-box'}%><br>
 
-      <%= f.label :end_time, :タスクの終了時間, class: 'task-form_label'%>
-      <%= f.datetime_select :end_time, {use_month_numbers: true,minute_step: 15}, {class: 'time-box'}%><br>
+        <%= f.label :end_time, :タスクの終了時間, class: 'task-form_label'%>
+        <%= f.datetime_select :end_time, {use_month_numbers: true,minute_step: 15}, {class: 'time-box'}%><br>
 
-      <label>タスクの参加者</label>
-      <%= f.collection_check_boxes :user_ids, User.all, :id, :nickname %>
+        <label>タスクの参加者</label>
+        <%= f.collection_check_boxes :user_ids, User.all, :id, :nickname %>
 
-      <%= f.submit class: 'task-from_action'%>
-    <% end %>
+        <%= f.submit class: 'task-from_action'%>
+      <% end %>
+    </div>
+    <div class='task-delete'>
+      <h1>タスクの削除リンクです！</h1>
+      <%= link_to '削除', task_path(@task.id), method: :delete %>
+    </div>
   </div>
 </div>
-
-<br>
-  <h1>タスクの削除リンクです！</h1>
-  <%= link_to '削除', task_path(@task.id), method: :delete %>
