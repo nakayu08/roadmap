@@ -1,13 +1,22 @@
+<html>
+<body>
 <div class='task-edit-main'>
   <div class='task-edit-up'>
     <div class ='task-detail'>
       <h1>タスクの詳細です！</h1>
-      タスク名： <%=@task.title%><br>
-      タスクの説明：<%=@task.explanation%><br>
-      タスクの状態：<%=@task.condition.name%><br>
-      タスクの種類：<%=@task.category.name%><br>
-      タスクの開始時間：<%=@task.start_time%><br>
-      タスクの終了時間：<%=@task.end_time%><br>
+      <table border="1">
+      タスク名:<%=@task.title%>
+      <tr><th>タスクの説明</th>
+      <th><%=@task.explanation%></th></tr>
+      <tr><th>タスクの状態</th>
+      <th><%=@task.condition.name%></th></tr>
+      <tr><th>タスクの種類</th>
+      <th><%=@task.category.name%></th></tr>
+      <tr><th>タスクの開始時間</th>
+      <th><%=@task.start_time%></th></tr>
+      <tr><th>タスクの終了時間</th>
+      <th><%=@task.end_time%></th></tr>
+      </table>
     </div>
   </div>
 
@@ -53,3 +62,6 @@
     </div>
   </div>
 </div>
+
+</body>
+</html>
