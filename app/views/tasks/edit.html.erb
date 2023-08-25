@@ -13,9 +13,9 @@
       <tr><th>タスクの種類</th>
       <th><%=@task.category.name%></th></tr>
       <tr><th>タスクの開始時間</th>
-      <th><%=@task.start_time%></th></tr>
+      <th><%=@task.start_time.to_s(:datetime_jp)%></th></tr>
       <tr><th>タスクの終了時間</th>
-      <th><%=@task.end_time%></th></tr>
+      <th><%=@task.end_time.to_s(:datetime_jp)%></th></tr>
       <tr><th>タスクの参加者</th>
       <th><%=@task.users.pluck(:first_name).join(", ")%></th></tr>
       </table>
