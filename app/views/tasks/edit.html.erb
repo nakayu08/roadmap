@@ -16,6 +16,8 @@
       <th><%=@task.start_time%></th></tr>
       <tr><th>タスクの終了時間</th>
       <th><%=@task.end_time%></th></tr>
+      <tr><th>タスクの参加者</th>
+      <th><%=@task.users.pluck(:first_name).join(", ")%></th></tr>
       </table>
     </div>
   </div>
@@ -33,7 +35,7 @@
         <div class="items-explain">
           <div class="weight-bold-text">
             タスクの説明
-            <span class="indispensable">必須</span>
+            <span class="indispensable"></span>
           </div>
           <%= f.text_area :explanation, class:"tasks-text", id:"tasks-info", placeholder:"タスクの詳細"%>
         </div>
