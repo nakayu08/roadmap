@@ -22,7 +22,7 @@
     </div>
   </div>
 
-
+<% if @task.users.pluck(:id).include?(current_user.id) %>
   <div class='task-edit-down'>
     <div class='task-from'>
       <h1>タスク編集画面です！</h1>
@@ -63,6 +63,7 @@
       <%= link_to '削除', task_path(@task.id), method: :delete %>
     </div>
   </div>
+  <% end %>
 </div>
 
 </body>
