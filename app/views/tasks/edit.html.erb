@@ -5,7 +5,7 @@
     <div class ='task-detail'>
       <h1>タスクの詳細です！</h1>
       <table border="1">
-      タスク名:<%=@task.title%>
+      <h3>タスク名: <%=@task.title%></h3>
       <tr><th>タスクの説明</th>
       <th><%=@task.explanation%></th></tr>
       <tr><th>タスクの状態</th>
@@ -24,43 +24,45 @@
 
 <% if @task.users.pluck(:id).include?(current_user.id) %>
   <div class='task-edit-down'>
+  <h1>タスク編集画面です！</h1>
     <div class='task-from'>
-      <h1>タスク編集画面です！</h1>
       <%=form_with model: @task, local: true do |f|%>
       <%= render 'layouts/error_messages', model: f.object %>
         
-        <%= f.label :title, :タスク名, class: 'task-form_label'%>
+        <%= f.label :title, :タスク名, class: 'task-form_label'%><br>
         <%= f.text_field :title, class: 'task_title_input', placeholder: 'タスク名を入力してください'%><br>
 
         <div class="items-explain">
           <div class="weight-bold-text">
             タスクの説明
-            <span class="indispensable"></span>
+            <span class="indispensable"></span><br>
           </div>
-          <%= f.text_area :explanation, class:"tasks-text", id:"tasks-info", placeholder:"タスクの詳細"%>
+          <%= f.text_area :explanation, class:"task-text", id:"tasks-info", placeholder:"タスクの詳細"%><br>
         </div>
 
-        <%= f.label :category_id, :タスクの種類, class: 'task-form_label'%>
+        <%= f.label :category_id, :タスクの種類, class: 'task-form_label'%><br>
         <%= f.collection_select(:category_id, Category.all, :id, :name, {}, {class:"genre-select"}) %><br>
         
-        <%= f.label :condition_id, :タスクの状態, class: 'task-form_label'%>
+        <%= f.label :condition_id, :タスクの状態, class: 'task-form_label'%><br>
         <%= f.collection_select(:condition_id, Condition.all, :id, :name, {}, {class:"genre-select"}) %><br>
 
-        <%= f.label :start_time, :タスクの開始時間, class: 'task-form_label'%>
+        <%= f.label :start_time, :タスクの開始時間, class: 'task-form_label'%><br>
         <%= f.datetime_select :start_time, {use_month_numbers: true,minute_step: 15}, {class: 'time-box'}%><br>
 
-        <%= f.label :end_time, :タスクの終了時間, class: 'task-form_label'%>
+        <%= f.label :end_time, :タスクの終了時間, class: 'task-form_label'%><br>
         <%= f.datetime_select :end_time, {use_month_numbers: true,minute_step: 15}, {class: 'time-box'}%><br>
 
-        <label>タスクの参加者</label>
+        <label>タスクの参加者</label><br>
         <%= f.collection_check_boxes :user_ids, User.all, :id, :nickname %><br>
 
         <%= f.submit class: 'task-from_action'%>
       <% end %>
     </div>
-    <div class='task-delete'>
-      <h1>タスクの削除リンクです！</h1>
-      <%= link_to '削除', task_path(@task.id), method: :delete %>
+    <h1>タスクの削除リンクです！</h1>
+    <div class='task-de'>
+      <div class='task-delete'>
+        <%= link_to '・タスクを削除する', task_path(@task.id), method: :delete ,class: "link"%>
+      </div>
     </div>
   </div>
   <% end %>
