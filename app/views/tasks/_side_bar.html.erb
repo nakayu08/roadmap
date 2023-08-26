@@ -1,0 +1,9 @@
+ <div class="users">
+    <% User.where.not(id: current_user.id).each do |user| %>
+      <div class="user">
+        <div class="user-name">
+          <%= link_to user.first_name + user.last_name , task_path(user.id), method: :get %>
+        </div>
+      </div>
+    <% end %>
+  </div>

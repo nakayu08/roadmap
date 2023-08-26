@@ -1,19 +1,11 @@
 <div class="task_main">
   <div class="user_index">
-    <div class="users">
-      <% User.where.not(id: current_user.id).each do |user| %>
-        <div class="user">
-          <div class="user-name">
-            <%= link_to user.first_name + user.last_name , task_path(user.id), method: :get %>
-          </div>
-        </div>
-      <% end %>
-    </div>
+    <%= render partial: "side_bar", locals: { user: @user } %>
   </div>
 
+  
   <div class="user_calendar">
-  <%= @user.nickname%>
-  <h1>個人の1ヶ月のスケジュールです！</h1>
+  <h1><%= @user.nickname %>さんの1ヶ月のスケジュールです！</h1>
     <div id='onlyCalendar'></div>
   </div>
 </div>
