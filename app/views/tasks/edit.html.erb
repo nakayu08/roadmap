@@ -53,7 +53,7 @@
         <%= f.datetime_select :end_time, {use_month_numbers: true,minute_step: 15}, {class: 'time-box'}%><br>
 
         <label>タスクの参加者</label>
-        <%= f.collection_check_boxes :user_ids, User.all, :id, :nickname %>
+        <%= f.collection_check_boxes :user_ids, User.all, :id, :nickname %><br>
 
         <%= f.submit class: 'task-from_action'%>
       <% end %>
