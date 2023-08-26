@@ -87,3 +87,13 @@ div.fc-event-title {
   text-decoration: line-through 3px;
 
 }
+
+/*
+タスク詳細画面のCSS
+*/
+
+.task-edit-main{
+  display: flex;
+  justify-content: space-around;
+}
+ 
