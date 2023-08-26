@@ -121,4 +121,16 @@ div.fc-event-title {
 .task-text{
   width: 300px;
 }
+.task-de{
+  background-color:powderblue;
+  border: 2px double;
+}
+.task-delete{
+  background-color:powderblue;
+  height: 50px;
+  text-decoration: none;
+  font-weight: bolder;
+  display: grid;
+  place-items: center;
+}
  
