@@ -96,4 +96,29 @@ div.fc-event-title {
   display: flex;
   justify-content: space-around;
 }
+
+/*
+フォーム部分のCSS
+*/
+.task-from{
+  border: 2px double;
+  background-color:powderblue;
+  font-weight: bolder;
+}
+
+.task-from_new{
+  border: 2px double;
+  width: 600px;
+  height: 100%;
+  background-color:powderblue;
+  font-weight: bolder;
+}
+
+.task_title_input{
+  width: 300px;
+}
+
+.task-text{
+  width: 300px;
+}
  
