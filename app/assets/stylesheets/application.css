@@ -101,6 +101,10 @@ div.fc-event-title {
 /*
 コメント表示のCSS
 */
+.comments-main{
+  display: flex;
+  justify-content: center;
+}
 .comment-form{
   display: flex;
 }
