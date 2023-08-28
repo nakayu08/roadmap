@@ -1,8 +1,9 @@
 class CommentsController < ApplicationController
   def create
     @comment = Comment.new(comment_params)
+    @task = Task.find(params[:task_id]) #追加
     if @comment.save
-      ActionCable.server.broadcast "comment_channel", {comment: @comment, user: @comment.user} #追加
+      CommentChannel.broadcast_to @task, { comment: @comment, user: @comment.user } #追加
     end
   end
 
