@@ -1,6 +1,8 @@
 class CommentChannel < ApplicationCable::Channel
   def subscribed
-    stream_from "comment_channel" #追加
+    @task = Task.find(params[:task_id]) # 追記
+    stream_for @task # 追記
+    
   end
 
   def unsubscribed
