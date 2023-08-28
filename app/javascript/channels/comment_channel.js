@@ -1,7 +1,10 @@
 import consumer from "./consumer"
 
 if(location.pathname.match(/\/tasks\/[0-9]{1,}\/edit/)){
-  consumer.subscriptions.create("CommentChannel", {
+  consumer.subscriptions.create({
+    channel: "CommentChannel",
+    task_id: location.pathname.match(/\d+/)[0]
+  }, {
     connected() {
       // Called when the subscription is ready for use on the server
     },
@@ -11,7 +14,6 @@ if(location.pathname.match(/\/tasks\/[0-9]{1,}\/edit/)){
     },
 
     received(data) {
-      console.log(data) //削除
       const html = `
         <div class="comment">
           <p class="user-info">${data.user.nickname}： </p>
