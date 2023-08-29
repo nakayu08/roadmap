@@ -1,7 +1,7 @@
 class Task < ApplicationRecord
   has_many :task_users, dependent: :destroy
   has_many :users, through: :task_users, validate: false
-  has_many :comments
+  has_many :comments, dependent: :destroy
 
   validates :title, presence: true
   validates :explanation, presence: true
