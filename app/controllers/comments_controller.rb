@@ -4,6 +4,9 @@ class CommentsController < ApplicationController
     @task = Task.find(params[:task_id]) #追加
     if @comment.save
       CommentChannel.broadcast_to @task, { comment: @comment, user: @comment.user } #追加
+    else
+      #redirect_to edit_task_path(params[:task_id])
+      render :create
     end
   end
 

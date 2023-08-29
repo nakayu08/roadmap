@@ -85,6 +85,7 @@
     <div class="comment-form">
       <% if user_signed_in? %>
         <%= form_with model: [@task, @comment], id: "comment-form" do |f| %>
+        <%= render 'layouts/error_messages', model: f.object %>
           <%= f.text_area :text , class: "comment-text"%>
           <%= f.submit "コメントをする", class: "comment-submit" %>
         <% end %>
