@@ -5,8 +5,8 @@ class CommentsController < ApplicationController
     if @comment.save
       CommentChannel.broadcast_to @task, { comment: @comment, user: @comment.user } #追加
     else
-      #redirect_to edit_task_path(params[:task_id])
-      render :create
+      @error_comment = @comment
+      render :error  
     end
   end
 
