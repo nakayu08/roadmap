@@ -22,7 +22,7 @@
     </div>
   </div>
 
-<% if @task.users.pluck(:id).include?(current_user.id)  %>
+<% if user_signed_in? && @task.users.pluck(:id).include?(current_user.id)  %>
   <div class='task-edit-down'>
   <h1>タスク編集画面です！</h1>
     <div class='task-from'>
