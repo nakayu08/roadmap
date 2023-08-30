@@ -96,6 +96,8 @@
           <%= f.text_area :text , class: "comment-text"%>
           <%= f.submit "コメントをする", class: "comment-submit" %>
         <% end %>
+      <% else %>
+      ※※ログインしていないとコメントをすることができません※※
       <% end %>
     </div>
   </div>
