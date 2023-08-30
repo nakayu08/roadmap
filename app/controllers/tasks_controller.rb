@@ -27,7 +27,8 @@ class TasksController < ApplicationController
   end
 
   def edit
-    
+    @comments = @task.comments.includes(:user)
+    @comment = Comment.new
   end
 
   def update
