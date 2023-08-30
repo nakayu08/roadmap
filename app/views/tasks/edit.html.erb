@@ -78,7 +78,7 @@
         <div class="comment">
           <p class="user-info"><%= comment.user.nickname %>： </p>
           <p><%= comment.text%></p>
-          <%= link_to 'コメントを削除', task_comment_path(@task, comment), confirm: 'Are you sure?', method: :delete %>
+          <%= link_to 'コメントを削除', task_comment_path(@task, comment), confirm: 'Are you sure?', method: :delete, class: "link" %>
         </div>
       <% end %>
     </div>
