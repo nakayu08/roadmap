@@ -1,0 +1,15 @@
+ja:
+  activerecord:
+    attributes:
+      user:
+        nickname: ニックネーム
+        first_name: 名字
+        last_name: 名前
+      task:
+        title: タイトル
+        explanation: 説明
+        start_time: 開始時間
+        end_time: 終了時間
+        category_id: タスクの種類
+        condition_id: タスクの状態
+        user_ids: タスクの参加者
