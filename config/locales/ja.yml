@@ -6,8 +6,8 @@ ja:
         first_name: 名字
         last_name: 名前
       task:
-        title: タイトル
-        explanation: 説明
+        title: タスク名
+        explanation: タスクの説明
         start_time: 開始時間
         end_time: 終了時間
         category_id: タスクの種類
