@@ -13,3 +13,5 @@ ja:
         category_id: タスクの種類
         condition_id: タスクの状態
         user_ids: タスクの参加者
+      comment:
+        text: コメント

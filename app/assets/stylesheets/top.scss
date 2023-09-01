@@ -1,3 +1,16 @@
 // Place all the styles related to the top controller here.
 // They will automatically be included in application.css.
 // You can use Sass (SCSS) here: https://sass-lang.com/
+
+.top-main{
+  display: flex;
+  
+}
+
+.box3{
+  width: 350px;
+  height: 65px;
+  margin: 60px auto 0;
+  border-radius: 4px;
+  border: 1px #ddd solid;
+}
