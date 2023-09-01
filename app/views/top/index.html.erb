@@ -1,11 +1,19 @@
 <!DOCTYPE html>
 <html>
-    オンラインroadmapトップページです!<br>
+<h3>オンラインroadmapトップページです!</h3><br>
 
     ログイン、または新規登録してください!
+<div class="top-main">
+    <div class="box-inner">
+        <div class="box3">
+        <div class="box-newusr">
+        <%= link_to 'ログイン', new_user_session_path %>
+        </div>
 
-    <div>
-    <%= link_to 'ログイン', new_user_session_path %>
-    <%= link_to '新規登録', new_user_registration_path%>
-    </div>
+        <div class="box-newusr">
+        <%= link_to '新規登録', new_user_registration_path%>
+        </div>
+        </div>
+  </div>
+</div>
 </html>
