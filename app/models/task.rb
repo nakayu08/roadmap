@@ -24,8 +24,4 @@ class Task < ApplicationRecord
     errors.add(:end_time, "は開始時刻より遅い時間を選択してください") if self.start_time > self.end_time
   end
 
-  #def start_check
-   # errors.add(:start_time, "は現在の日時より遅い時間を選択してください") if self.start_time < Time.now
-  #end
-
 end
