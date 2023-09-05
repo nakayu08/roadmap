@@ -21,11 +21,13 @@ class Task < ApplicationRecord
   private
 
   def start_end_check
-    errors.add(:end_time, "は開始時刻より遅い時間を選択してください") if self.start_time > self.end_time
+    if self.start_time == nil 
+      errors.add(:start_time, "時間を入力してください")
+    elsif self.end_time == nil
+      errors.add(:end_time, "時間を入力してください")
+    elsif self.start_time > self.end_time
+      errors.add(:end_time, "は開始時刻より遅い時間を選択してください")
+    end
   end
-
-  #def start_check
-   # errors.add(:start_time, "は現在の日時より遅い時間を選択してください") if self.start_time < Time.now
-  #end
 
 end
