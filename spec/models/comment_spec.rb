@@ -15,19 +15,19 @@ RSpec.describe Comment, type: :model do
       it 'textが空では保存できない' do
         @comment.text = ''
         @comment.valid?
-        expect(@comment.errors.full_messages).to include("Text を入力してください")
+        expect(@comment.errors.full_messages).to include("コメントを入力してください")
 
       end
       it 'taskが紐付いていないと保存できない' do
         @comment.task = nil
         @comment.valid?
-        expect(@comment.errors.full_messages).to include("Task must exist")
+        expect(@comment.errors.full_messages).to include("Taskを入力してください")
 
       end
       it 'userが紐付いていないと保存できない' do
         @comment.user = nil
         @comment.valid?
-        expect(@comment.errors.full_messages).to include("User must exist")
+        expect(@comment.errors.full_messages).to include("Userを入力してください")
 
       end
     end
