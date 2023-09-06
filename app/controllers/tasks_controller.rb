@@ -8,8 +8,12 @@ class TasksController < ApplicationController
   end
 
   def show
-    @user = User.find(params[:id])
-    @tasks = @user.tasks
+    if User.exists?(params[:id])
+      @user = User.find(params[:id])
+      @tasks = @user.tasks
+    else
+      redirect_to tasks_path
+    end
   end
 
   def new
@@ -27,21 +31,29 @@ class TasksController < ApplicationController
   end
 
   def edit
-    @comments = @task.comments.includes(:user)
-    @comment = Comment.new
+      @comments = @task.comments.includes(:user)
+      @comment = Comment.new
   end
 
   def update
-    if @task.update(task_params)
-      redirect_to tasks_path
+    if @task.users.includes(current_user)
+      if @task.update(task_params)
+        redirect_to tasks_path
+      else
+        render :edit
+      end
     else
-      render :edit
+      redirect_to tasks_path
     end
   end
 
   def destroy
-    @task.destroy
-    redirect_to  tasks_path
+    if @task.users.includes(current_user)
+      @task.destroy
+      redirect_to  tasks_path
+    else
+      redirect_to tasks_path
+    end
   end
 
   private
@@ -51,7 +63,11 @@ class TasksController < ApplicationController
   end
 
   def set_task
-    @task = Task.find(params[:id])
+    if Task.exists?(params[:id])
+      @task = Task.find(params[:id])
+    else
+      redirect_to tasks_path
+    end
   end
 
   def set_users
